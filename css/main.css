@@ -1,0 +1,58 @@
+h1, h2{
+    text-align: center;
+    font-family: 'Cormorant SC', serif;
+}
+body{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    font-family: "PT Sans", sans-serif;
+}
+p{
+    line-height: 2.5vw;
+}
+.img-card, img{
+    width: 15vw;
+    height: 10vw;
+    float: left;
+    margin-right: 10vw;
+}
+.img-card > p{
+    text-align: center;
+}
+p > small{
+    line-height: 0.5vw;
+    text-align: left;
+}
+.last{
+    margin-top: 50vw;
+    background:grey;
+    color:white;
+}
+.head{
+    text-align: center;
+}
+.content{
+    background:black;
+    color:white;
+}
+.content > p{
+    margin-left: 10vw;
+    padding-top: 10vw;
+    margin-right: 10vw;
+    padding-bottom: 10vw;
+}
+.center{
+    /*text-align: center;*/
+}
+.second{
+    margin-left: 40vw;
+    float:right;
+    width: 10vw;
+}
+.flex{
+    width: 25vw;
+    height: 5vw;
+    float: left;
+    margin-top: -10vw;
+    margin-left: 28vw;
+}
