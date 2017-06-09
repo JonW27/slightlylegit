@@ -21,16 +21,16 @@
             count = 0;
             function start(){
                 if(myArr[count]["Choice 3"] == "" || myArr[count]["Choice 3"] == "n/a" || myArr[count]["Choice 3"] == "N/A"){
-                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span></p>";
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 2"]+"</span></p>";
                 }
                 else if(myArr[count]["Choice 4"] == "" || myArr[count]["Choice 4"] == "n/a" || myArr[count]["Choice 4"] == "N/A"){
-                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 3"]+"</span></p>";
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 2"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 3"]+"</span></p>";
                 }
                 else if(myArr[count]["Choice 4"] == "" || myArr[count]["Choice 4"] == "n/a" || myArr[count]["Choice 4"] == "N/A"){
-                        document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 4"]+"</span></p>";
+                        document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 4"]+"</span></p>";
                 }
                 else{
-                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 4"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 5"]+"</span></p>";
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this)';>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 4"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 5"]+"</span></p>";
                 }
             }
         </script>
