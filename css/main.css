@@ -60,3 +60,7 @@ video{
     width: 60vw;
     margin-left:10vw;
 }
+.inner{
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+}

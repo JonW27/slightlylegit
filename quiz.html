@@ -7,6 +7,32 @@
         <link href="https://fonts.googleapis.com/css?family=Cormorant+SC|PT+Sans" rel="stylesheet">
         <script>
             // do json processing stuff here for questions
+            var xmlhttp = new XMLHttpRequest();
+            var url = "res/questions.json";
+
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    myArr = JSON.parse(xmlhttp.responseText);
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            
+            count = 0;
+            function start(){
+                if(myArr[count]["Choice 3"] == "" || myArr[count]["Choice 3"] == "n/a" || myArr[count]["Choice 3"] == "N/A"){
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span></p>";
+                }
+                else if(myArr[count]["Choice 4"] == "" || myArr[count]["Choice 4"] == "n/a" || myArr[count]["Choice 4"] == "N/A"){
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 3"]+"</span></p>";
+                }
+                else if(myArr[count]["Choice 4"] == "" || myArr[count]["Choice 4"] == "n/a" || myArr[count]["Choice 4"] == "N/A"){
+                        document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 4"]+"</span></p>";
+                }
+                else{
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 4"]+"</span>"+"<br><span onclick='check(this);>"+myArr[count]["Choice 5"]+"</span></p>";
+                }
+            }
         </script>
     </head>
     <body>
@@ -14,7 +40,9 @@
         <div class="content">
             <h2 class="inner-box">TRIAL</h2>
             <hr>
-            <p>Welcome to Slightly Legit Preparatory Program. We hope you enjoy success on the upcoming final with our trial version of our product. For the full product please purchase our product <a href="lolno.html">here</a>. It has been discounted 99% for a limited time only, letting you only have to pay a cool $49 for it. User Evan Chen states that this product was the best value he ever got for his money, as it allowed him to push his average from  99.9 to an 100. He states, "that 0.1 percentage point made a big difference, as it truly allowed me to claim a 4.0GPA"(Evan '18). Customer Shakil Rafi agrees with this sentiment, stating "slightly legit preparatory systems has been the dream for me. With their coursework, I actually managed to impress my physics teacher by not failing"(Shakil '18).<br><br></p><div class="flex"><span class='first child'>Purchase Product</span></div><div class="flex"><span class="second child">Get started</span></div>
+            <div class="content" id="inner">
+            <p>Welcome to Slightly Legit Preparatory Program. We hope you enjoy success on the upcoming final with our trial version of our product. For the full product please purchase our product <a href="lolno.html">here</a>. It has been discounted 99% for a limited time only, letting you only have to pay a cool $49 for it. User Evan Chen states that this product was the best value he ever got for his money, as it allowed him to push his average from  99.9 to an 100. He states, "that 0.1 percentage point made a big difference, as it truly allowed me to claim a 4.0GPA"(Evan '18). Customer Shakil Rafi agrees with this sentiment, stating "slightly legit preparatory systems has been the dream for me. With their coursework, I actually managed to impress my physics teacher by not failing"(Shakil '18).<br><br></p><div class="flex"><span class='first child'>Purchase Product</span></div><div class="flex"><span class="second child" onclick="start();">Get started</span></div>  
+            </div>    
         </div>
     </body>
 </html>
