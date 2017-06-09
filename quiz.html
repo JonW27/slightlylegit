@@ -21,17 +21,33 @@
             count = 0;
             function start(){
                 if(myArr[count]["Choice 3"] == "" || myArr[count]["Choice 3"] == "n/a" || myArr[count]["Choice 3"] == "N/A"){
-                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 2"]+"</span></p>";
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(1);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(2);'>"+myArr[count]["Choice 2"]+"</span></p>";
                 }
                 else if(myArr[count]["Choice 4"] == "" || myArr[count]["Choice 4"] == "n/a" || myArr[count]["Choice 4"] == "N/A"){
-                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 2"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 3"]+"</span></p>";
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(1);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(2);'>"+myArr[count]["Choice 2"]+"</span>"+"<br><span onclick='check(3);'>"+myArr[count]["Choice 3"]+"</span></p>";
                 }
-                else if(myArr[count]["Choice 4"] == "" || myArr[count]["Choice 4"] == "n/a" || myArr[count]["Choice 4"] == "N/A"){
-                        document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 4"]+"</span></p>";
+                else if(myArr[count]["Choice 5"] == "" || myArr[count]["Choice 5"] == "n/a" || myArr[count]["Choice 5"] == "N/A"){
+                        document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(1);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(2);'>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(3);'>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(4);'>"+myArr[count]["Choice 4"]+"</span></p>";
                 }
                 else{
-                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(this);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(this)';>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(this);'>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 4"]+"</span>"+"<br><span onclick='check(this);'>"+myArr[count]["Choice 5"]+"</span></p>";
+                    document.getElementById("inner").innerHTML="<p>"+myArr[count]["Question"]+"<br><br><span onclick ='check(1);'>"+myArr[count]["Choice 1"]+"</span><br><span onclick='check(2);'>"+myArr[count]["Choice 2"]+"</span>"+"</span><br><span onclick='check(3);'>"+myArr[count]["Choice 3"]+"</span>"+"<br><span onclick='check(4);'>"+myArr[count]["Choice 4"]+"</span>"+"<br><span onclick='check(5);'>"+myArr[count]["Choice 5"]+"</span></p>";
                 }
+            }
+            right = 0;
+            total = 0;
+            function check(elem){
+                //console.log(elem.value);
+                total++;
+                if(elem == parseInt(myArr[count]["Answer"])){
+                    right++;
+                    document.getElementById("inner").innerHTML = "<p>You got it right. Choice #"+myArr[count]["Answer"]+" is correct. The reason why is EXPLANATIONS ARE PART OF THE PRO PRODUCT. IF YOU WOULD LIKE EXPLANATIONS, PLEASE PURCHASE OUR PRO PRODUCT. <span onclick='start();'>Next</span></p>";
+                }
+                else{
+                    document.getElementById("inner").innerHTML = "<p>You got it wrong. Choice # "+myArr[count]["Answer"]+" is correct. The reason why is EXPLANATIONS ARE PART OF THE PRO PRODUCT. IF YOU WOULD LIKE EXPLANATIONS, PLEASE PURCHASE OUR PRO PRODUCT. <span onclick='start();'>Next</span></p>";
+                }
+                document.getElementsByTagName("h2")[0].innerText = right + "/" + total;
+                count++;
+                //console.log("reached here "+count);
             }
         </script>
     </head>
